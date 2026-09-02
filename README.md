@@ -54,7 +54,7 @@ Responsibilities may be shared or reassigned as the project progresses. See
 - [ ] Development‑environment verification **screenshots** (add to `docs/report/`)
 - [ ] ESP32 test run **screenshot** (Serial Monitor + blinking LED)
 - [ ] Screenshot of an opened AR4 fabrication file (slicer/CAD)
-- [ ] Instructor added as a collaborator on the repo
+- [x] Instructor added as a collaborator on the repo
 - [ ] Final PDF report exported and submitted
 
 ---
