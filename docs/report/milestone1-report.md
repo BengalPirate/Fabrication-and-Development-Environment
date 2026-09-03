@@ -33,6 +33,7 @@ Appendix A.
 | Git | ✅ | `git --version` → **2.50.1 (Apple Git‑155)**; repo cloned | Fig. A‑2 |
 | Arduino IDE + ESP32 board support/driver | ✅ | ESP32 board + `/dev/cu.usbserial-10` port selectable; sketch compiles & uploads | Fig. A‑4 |
 | Slicer / fab-file software (Bambu Studio) | ✅ | AR4 STL parts open and slice | Fig. A‑3 |
+| AR4 control software (Ver 6.4.1) | ✅ | GUI launches on the PC (Teensy not yet connected) | Fig. A‑6 |
 | AR4 project files | ✅ | Repository + AR4 STLs open (VS Code / Bambu Studio) | Figs. A‑1, A‑3 |
 
 The only notable issue was an ESP32 **upload failure during the high-speed flash
@@ -208,3 +209,7 @@ order the long-lead motor set, and begin authorized fabrication.
 **Fig. A‑5 — Serial Monitor output at 115200 baud (LED-blink heartbeat).**
 
 ![Serial Monitor heartbeat](figA8-serial.png)
+
+**Fig. A‑6 — AR4 control software (Ver 6.4.1) installed and launched on the PC. The "Unable to establish communications with Teensy 4.1" notice is expected — the controller is not yet connected at this stage.**
+
+![AR4 control software interface](figA12-interface.png)
