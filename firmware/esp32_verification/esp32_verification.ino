@@ -3,7 +3,7 @@
  *  ESP32 Verification Sketch  --  Milestone 1
  * ============================================================================
  *  Course project : Annin Robotics AR4 Robotic Arm
- *  Team           : (TEAM NAME HERE)
+ *  Team           : Team 2
  *  Team members   : Brandon Newton  (Embedded Programming)
  *                   Andrew Overton  (Mechanical Assembly & Fabrication)
  *                   Roshan Padhan   (Electronics & Wiring)
