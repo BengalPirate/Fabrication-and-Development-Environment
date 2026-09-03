@@ -55,7 +55,7 @@ Responsibilities may be shared or reassigned as the project progresses. See
 - [x] ESP32 test run **screenshot** (upload success + Serial Monitor heartbeat)
 - [x] Screenshot of an opened AR4 fabrication file (Bambu Studio)
 - [x] Instructor added as a collaborator on the repo
-- [ ] Final PDF report exported and submitted
+- [x] Final PDF report exported ([`docs/report/Milestone1_Fabrication_and_Development_Environment.pdf`](docs/report/Milestone1_Fabrication_and_Development_Environment.pdf))
 
 ---
 
@@ -67,3 +67,34 @@ Responsibilities may be shared or reassigned as the project progresses. See
 3. **Tools → Board →** _ESP32 Dev Module_; **Tools → Port →** your board's port.
 4. Click **Upload**, then open **Serial Monitor** at **115200 baud**.
 5. Expected: on‑board LED blinks at 1 Hz and a heartbeat message prints each second.
+
+---
+
+## Milestone 1 — Verification screenshots
+
+Full report: [`docs/report/Milestone1_Fabrication_and_Development_Environment.pdf`](docs/report/Milestone1_Fabrication_and_Development_Environment.pdf)
+· source: [`docs/report/milestone1-report.md`](docs/report/milestone1-report.md)
+
+**Fig. A‑1 — Visual Studio Code open with the project folder**
+
+![VS Code with the project open](docs/report/figA9-vscode.png)
+
+**Fig. A‑2 — Python and Git versions verified (`python --version` → 3.13.9; `git --version` → 2.50.1)**
+
+![Python and Git versions](docs/report/figA10-python_and_git.png)
+
+**Fig. A‑3 — AR4 STL parts opened and sliced in Bambu Studio (fabrication file)**
+
+![AR4 parts in Bambu Studio](docs/report/figA11-slicer.png)
+
+**Fig. A‑4 — ESP32 verification sketch compiled and uploaded successfully (Arduino IDE)**
+
+![ESP32 upload success](docs/report/figA7-upload.png)
+
+**Fig. A‑5 — Serial Monitor output at 115200 baud (LED-blink heartbeat)**
+
+![Serial Monitor heartbeat](docs/report/figA8-serial.png)
+
+**Fig. A‑6 — AR4 control software (Ver 6.4.1) installed and launched on the PC**
+
+![AR4 control software interface](docs/report/figA12-interface.png)
