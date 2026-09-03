@@ -51,9 +51,9 @@ Responsibilities may be shared or reassigned as the project progresses. See
 - [x] ESP32 verification code (`firmware/esp32_verification/`)
 - [x] Software‑setup summary (`docs/software-setup-summary.md`)
 - [x] Preliminary AR4 fabrication & parts checklist (`docs/ar4-fabrication-checklist.md`)
-- [ ] Development‑environment verification **screenshots** (add to `docs/report/`)
-- [ ] ESP32 test run **screenshot** (Serial Monitor + blinking LED)
-- [ ] Screenshot of an opened AR4 fabrication file (slicer/CAD)
+- [x] Development‑environment verification **screenshots** (`docs/report/`)
+- [x] ESP32 test run **screenshot** (upload success + Serial Monitor heartbeat)
+- [x] Screenshot of an opened AR4 fabrication file (Bambu Studio)
 - [x] Instructor added as a collaborator on the repo
 - [ ] Final PDF report exported and submitted
 
