@@ -28,15 +28,18 @@ Appendix A.
 
 | Tool | Installed | Verified by | Screenshot |
 | --- | --- | --- | --- |
-| Visual Studio Code | ✅ | Opens with project folder | Fig. A‑1 |
-| Arduino IDE | ✅ | ESP32 board + port selectable | Fig. A‑2 |
-| Python 3 | ✅ | `python3 --version` → _(version)_ | Fig. A‑3 |
-| Git | ✅ | `git --version`; repo cloned | Fig. A‑4 |
-| ESP32 board support + driver | ✅ | Board appears; port detected | Fig. A‑2 |
-| AR4 software / project files | ✅ | Control app launches; files open | Fig. A‑5 |
-| Slicer / fab-file software | ✅ | AR4 STL opens | Fig. A‑6 |
+| Visual Studio Code | ✅ | Opens with the project folder | Fig. A‑1 |
+| Python 3 | ✅ | `python --version` → **Python 3.13.9** | Fig. A‑2 |
+| Git | ✅ | `git --version` → **2.50.1 (Apple Git‑155)**; repo cloned | Fig. A‑2 |
+| Arduino IDE + ESP32 board support/driver | ✅ | ESP32 board + `/dev/cu.usbserial-10` port selectable; sketch compiles & uploads | Fig. A‑4 |
+| Slicer / fab-file software (Bambu Studio) | ✅ | AR4 STL parts open and slice | Fig. A‑3 |
+| AR4 project files | ✅ | Repository + AR4 STLs open (VS Code / Bambu Studio) | Figs. A‑1, A‑3 |
 
-_(Insert 1–2 sentence note on any install issues and how they were resolved.)_
+The only notable issue was an ESP32 **upload failure during the high-speed flash
+handshake** (esptool reported *"Unable to verify flash chip connection"* when
+switching to 921600 baud). It was resolved by lowering the Arduino IDE upload speed
+and using a data-capable USB cable connected directly to the computer; the sketch
+then compiled and uploaded successfully (Fig. A‑4).
 
 ---
 
@@ -45,16 +48,18 @@ _(Insert 1–2 sentence note on any install issues and how they were resolved.)_
 **Program:** `firmware/esp32_verification/esp32_verification.ino` (in the repository).
 
 The program:
-- **Compiles and uploads** successfully to the ESP32 Dev Module.
+- **Compiles and uploads** successfully to the ESP32 (chip ESP32‑D0WD‑V3, rev v3.1)
+  over `/dev/cu.usbserial-10`, using the Arduino IDE ESP32 core.
 - Produces a **visible output** — the on‑board LED blinks at 1 Hz.
-- **Prints to the Serial Monitor** — a heartbeat message once per second at 115200 baud.
+- **Prints to the Serial Monitor** — a heartbeat message twice per second at 115200 baud.
 - Includes **header comments** identifying the team and **section comments** explaining
   configuration, `setup()`, and `loop()`.
 
 **Results:**
-- Compilation: _Done compiling_ (screenshot Fig. A‑7).
-- Upload: successful, board reset and ran the sketch.
-- Serial Monitor output (screenshot Fig. A‑8):
+- Compilation & upload: successful — esptool reported *"Wrote 285280 bytes … Hash of
+  data verified. Hard resetting via RTS pin…"* and the board reset and ran the sketch
+  (screenshot Fig. A‑4).
+- Serial Monitor output at 115200 baud (screenshot Fig. A‑5):
 
 ```
 ============================================
@@ -153,7 +158,9 @@ PETG, optional gripper, 3D-printer access) to be checked against the team's on-h
 - **Driver DIP switches** — must match firmware/software version (MK3+).
 
 ### 4.7 Opened fabrication file
-An AR4 fabrication file was opened in _(slicer/CAD name)_ — see screenshot Fig. A‑9.
+AR4 printable-part **STL** files were opened and sliced in **Bambu Studio** (targeting a
+Bambu Lab H2C, 0.20 mm layer height) — see screenshot Fig. A‑3. This confirms the team
+can open and prepare the AR4 fabrication files for printing.
 
 ---
 
@@ -170,12 +177,34 @@ Repository: https://github.com/BengalPirate/Fabrication-and-Development-Environm
 
 ## 6. Summary / Readiness
 
-_(2–3 sentences: environment is ready, ESP32 verified, parts reviewed, next steps.)_
+The development environment is fully installed and verified (VS Code, Python 3.13.9,
+Git 2.50.1, the Arduino IDE with ESP32 support, and Bambu Studio for the fabrication
+files). The ESP32 board test compiles, uploads, blinks the on-board LED, and streams a
+heartbeat over serial, confirming the toolchain and PC-to-board communication. The AR4
+MK4 bill of materials, printed parts, and control hardware have been reviewed and an AR4
+STL was successfully opened and sliced. Next steps are to complete the parts inventory,
+order the long-lead motor set, and begin authorized fabrication.
 
 ---
 
 ## Appendix A — Screenshots
-- Fig. A‑1 … A‑6: development-environment tools open and working
-- Fig. A‑7: ESP32 sketch compiled
-- Fig. A‑8: Serial Monitor output
-- Fig. A‑9: opened AR4 fabrication file
+
+**Fig. A‑1 — Visual Studio Code open with the project folder and Milestone 1 report.**
+
+![VS Code with the project open](figA9-vscode.png)
+
+**Fig. A‑2 — Python and Git versions verified in the terminal (`python --version` → Python 3.13.9; `git --version` → 2.50.1).**
+
+![Python and Git versions](figA10-python_and_git.png)
+
+**Fig. A‑3 — AR4 STL parts opened and sliced in Bambu Studio (fabrication file).**
+
+![AR4 parts in Bambu Studio](figA11-slicer.png)
+
+**Fig. A‑4 — ESP32 verification sketch compiled and uploaded successfully in the Arduino IDE.**
+
+![ESP32 upload success](figA7-upload.png)
+
+**Fig. A‑5 — Serial Monitor output at 115200 baud (LED-blink heartbeat).**
+
+![Serial Monitor heartbeat](figA8-serial.png)
